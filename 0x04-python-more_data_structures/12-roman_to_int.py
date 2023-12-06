@@ -12,15 +12,12 @@ def roman_to_int(roman_string):
             'D': 500,
             'M': 100
         }
-    total = 0
+    numbers = [roman_numerals[x] for x in roman_string] + [0]
     prev_value = 0
 
-    for numeral in reversed(roman_string):
-        current_value = roman_numerals[numeral]
-        if current_value >= prev_value:
-            total += current_value
+    for i in range(len(numbers) - 1):
+        if numbers[i] >= numbers[i + 1]:
+            prev_value += numbers[i]
         else:
-            total -= current_value
-            prev_value = current_value
-
-    return (total)
+            prev_value -= numbers[i]
+    return (prev_value)
