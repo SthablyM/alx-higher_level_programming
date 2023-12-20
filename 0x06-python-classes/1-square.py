@@ -3,6 +3,8 @@
 
 
 class Square:
+    """Represent square"""
+
     def __init__(self, size):
         """Initialize.
         Args:
