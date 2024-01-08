@@ -1,8 +1,14 @@
 #!/usr/bin/python3
- class Rectangle(BaseGeometry):
-     def __init__(self, width, height):
-         self.width = width
-         self.height = height
+"""Define BaseGeometry class"""
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
-         self.integer_validator("width", width)
-         self.integer_validator("height", height)
+
+class Rectangle(BaseGeometry):
+    """Represent basegeomentry"""
+    def __init__(self, width, height):
+        """Intialize a new rectangle"""
+        self.width = width
+        self.height = height
+
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
