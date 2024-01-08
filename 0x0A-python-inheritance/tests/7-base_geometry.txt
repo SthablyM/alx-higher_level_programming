@@ -1,0 +1,20 @@
+# test_base_geometry.py
+import unittest
+from your_module_directory.7_base_geometry import BaseGeometry
+
+class TestBaseGeometry(unittest.TestCase):
+    def test_integer_validator(self):
+        with open('tests/7-base_geometry.txt', 'r') as file:
+            test_cases = [int(line.strip()) for line in file]
+
+        for value in test_cases:
+            with self.subTest(value=value):
+                    BaseGeometry.integer_validator("test_value", value)
+                except (TypeError, ValueError):
+                    pass
+                else:
+                    self.assertTrue(value > 0)
+
+if __name__ == '__main__':
+    unittest.main()
+
