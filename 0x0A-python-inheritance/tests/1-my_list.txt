@@ -1,0 +1,17 @@
+    def print_sorted(self):
+        
+        Print the list sorted in ascending order.
+	import:
+	>>> MyList = __import__('1-my_list').MyList
+
+        Example:
+	>>> my_list = MyList([4, 2, 7, 1, 5])
+        >>> my_list.print_sorted()
+        [1, 2, 4, 5, 7]
+
+	>>> my_list = MyList([1, 9, 4])
+	>>> my_list.print_sorted()
+	[1, 4, 9]
+
+	sorted_list = sorted(self)
+        print(sorted_list)
