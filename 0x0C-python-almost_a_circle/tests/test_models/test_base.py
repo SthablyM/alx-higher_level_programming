@@ -128,10 +128,5 @@ class TestBase_save_to_file(unittest.TestCase):
             pass
 
 
-
 if __name__ == "__main__":
     unittest.main()
-
-
-
-
