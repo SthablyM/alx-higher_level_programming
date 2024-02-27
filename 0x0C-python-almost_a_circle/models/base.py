@@ -12,6 +12,10 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """Initialize a new Base
+
+        Args:
+            id (int): The identity of the new Base"""
         if id is not None:
             self.id = id
         else:
@@ -55,6 +59,7 @@ class Base:
     
     @classmethod
     def load_from_file(cls):
+        """Reurn a list  of classes instantiated"""
         filename = cls.__name__ + ".json"
         try:
             with open(filename, "r") as file:
