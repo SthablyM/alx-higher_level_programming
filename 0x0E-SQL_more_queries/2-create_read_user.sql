@@ -2,6 +2,5 @@
 -- create database
 CREATE DATABASE IF NOT EXISTS hbtn_0d_2;
 -- creates a user
-CREATE USER 'user_0d_2'@'localhost' IDENTIFIED BY 'user_0d_2_pwd';
--- grant select privileges to a user
-GRANT SELECT on hbtn_0d_2.* TO 'user_0d_2'@'localhost' WITH GRANT OPTION;
+CREATE USER IF NOT EXISTS user_0d_2@localhost IDENTIFIED BY 'user_0d_2_pwd';
+GRANT SELECT on hbtn_0d_2.* TO user_0d_2@localhost;
