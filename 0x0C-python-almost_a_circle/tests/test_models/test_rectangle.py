@@ -274,5 +274,46 @@ class TestRectangle_y(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             Rectangle(3, 5, 0, -1)
 
+
+class TestRectangle_area(unittest.TestCase):
+    """unittest fo testing tje area method of the rectangle"""
+
+    def test_area_small(self):
+        r = Rectangle(10, 2, 0, 0, 0)
+        self.assertEqual(20, r.area())
+
+    def test_area_large(self):
+        r = Rectangle(777777777777777, 7777777777777777777, 0, 0, 1)
+        self.assertEqual(6049382716049376666061728395061729, r.area())
+
+    def test_area_changed_attrribute(self):
+        r = Rectangle(2, 10, 1, 1, 1)
+        r.width = 7
+        r.height = 14
+        self.assertEqual(98, r.area())
+
+    def  test_area_one_arg(self):
+        r = Rectangle(2, 10, 1, 1, 1)
+        with self.assertRaises(TypeError):
+            r.area(1)
+
+
+class TestRectangle_update_args(unittest.TestCase):
+    """Unittest for testing update args"""
+    #Test args
+    def test_update_args_one(self):
+        r = Rectangle(10, 10, 10, 10, 10)
+        r.update(89)
+        self.assertEqual("[Rectangle] (89) 10/10 - 10/10", str(r))
+
+    def test_update_args_invalid_width_type(self):
+        r = Rectangle(10, 10, 10, 10, 10)
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            r.update(89, "invalid")
+
+    def test_update_args_invalid_height_type(self):
+        r = Rectangle(10, 10, 10, 10, 10)
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
+            r.update(89, 2, "invalid")
 if __name__ == "__main__":
     unittest.main()
