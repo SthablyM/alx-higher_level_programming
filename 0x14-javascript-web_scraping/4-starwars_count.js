@@ -1,6 +1,5 @@
 #!/usr/bin/node
 
-
 const request = require('request');
 
 request(process.argv[2], function (error, response, body) {
@@ -9,7 +8,7 @@ request(process.argv[2], function (error, response, body) {
     console.log(results.reduce((count, movie) => {
       return movie.characters.find((character) => character.endsWith('/18/'))
         ? count + 1
-	: count;
-     }, 0));
+        : count;
+    }, 0));
   }
 });
